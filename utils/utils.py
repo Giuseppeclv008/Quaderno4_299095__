@@ -29,7 +29,7 @@ def check_connection():
         st.sidebar.success("Connesso")
         return True
     
-def info_corso_per_tipo(option1,option2, name_tab):
+def info_corso_per_tipo(option1,option2):
    
 
     info_corso= execute_query(st.session_state["connection"], f"SELECT * FROM CORSI WHERE TIPO = '{option1}' AND LIVELLO = {option2};")
@@ -47,4 +47,7 @@ def programmazione_corso(option1):
     return info_programmazione_corso
 
 
-   
+def info_istruttore_cognom_dn(option1, option2):
+    istruttore = execute_query(st.session_state["connection"], f"SELECT * FROM ISTRUTTORE WHERE COGNOME = '{option1}' AND DATANASCITA = '{option2}' ")
+    info_istruttore= [dict(zip(istruttore.keys(),result)) for result in istruttore ]
+    return info_istruttore 
