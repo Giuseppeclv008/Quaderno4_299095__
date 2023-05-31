@@ -16,10 +16,18 @@ def create_tab_istruttori(tab_istruttori):
     )
     info_istruttore = info_istruttore_cognom_dn(cognome, data)
 
+
+
     if info_istruttore == [] : 
         st.warning("Non è presente questo istruttore ")
     else: 
-        st.write(info_istruttore) 
+        df = pd.DataFrame(
+        info_istruttore,
+        columns=('col %d' % i for i in range(20)))
+        st.dataframe(df)
+        st.write(info_istruttore)
+
+    
     
 
 if __name__ == "__main__":
