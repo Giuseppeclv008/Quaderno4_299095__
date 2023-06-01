@@ -14,6 +14,7 @@ def create_tab_istruttori(tab_istruttori):
         datetime.date(1981, 5, 30)
         
     )
+   
     info_istruttore = info_istruttore_cognom_dn(cognome, data)
 
 
@@ -21,11 +22,36 @@ def create_tab_istruttori(tab_istruttori):
     if info_istruttore == [] : 
         st.warning("Non è presente questo istruttore ")
     else: 
-        df = pd.DataFrame(
-        info_istruttore,
-        columns=('col %d' % i for i in range(20)))
-        st.dataframe(df)
-        st.write(info_istruttore)
+        df = pd.DataFrame(info_istruttore)
+
+        for index, row in df.iterrows():
+            CodFisc = row['CodFisc']
+            Nome = row['Nome']
+            Cognome = row['Cognome']
+            DataNascita = row['DataNascita']
+            Email = row['Email']
+            Telefono = row['Telefono']
+
+            if Telefono == "None":
+                st.markdown(f"### CodFisc: {CodFisc}")
+                st.markdown(f"### Nome: {Nome} ")
+                st.write(f"### Cognome: {Cognome}")
+                st.markdown(f"### DataNascita: {DataNascita}")
+                st.markdown(f"### Email: {Email}")
+                st.warning("## Numero di Telefono non disponibile.")
+            else: 
+                st.markdown(f"### CodFisc: {CodFisc}")
+                st.markdown(f"### Nome: {Nome} ")
+                st.write(f"### Cognome: {Cognome}")
+                st.markdown(f"### DataNascita: {DataNascita}")
+                st.markdown(f"### Email: {Email}")
+                st.markdown(f"### Telefono: {Telefono}")
+                
+
+            
+       
+
+       
 
     
     

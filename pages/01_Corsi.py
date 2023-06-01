@@ -22,7 +22,7 @@ def create_tab_corsi(tab_corsi):
     'Seleziona un livello',
     (1,2,3,4))
 
-    info_c = info_corso_per_tipo(option1,option2,'corsi')
+    info_c = info_corso_per_tipo(option1,option2)
 
     if  info_c ==  []:
         st.markdown('#        ')
