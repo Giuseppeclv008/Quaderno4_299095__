@@ -18,7 +18,7 @@ def create_tab_istruttori(tab_istruttori):
     info_istruttore = info_istruttore_cognom_dn(cognome, data)
 
 
-
+    st.title(f"Ecco le informazioni che cercavi sull'istruttore {cognome}")
     if info_istruttore == [] : 
         st.warning("Non è presente questo istruttore ")
     else: 

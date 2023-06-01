@@ -23,9 +23,9 @@ def create_tab_corsi(tab_corsi):
     (1,2,3,4))
 
     info_c = info_corso_per_tipo(option1,option2)
-
+    st.title("Ecco le informazioni che cercavi: ")
     if  info_c ==  []:
-        st.markdown('#        ')
+       
         st.markdown('#        ')
         st.warning('### Non ci sono opzioni disponibili ')
         
@@ -37,7 +37,7 @@ def create_tab_corsi(tab_corsi):
             c = info_c[i].get('Nome')
             d = info_c[i].get('Livello')
             
-            st.markdown('#        ')
+      
             st.markdown('### :red[Tipo Corso:] 'f'{a}')
             st.markdown('##### :red[Codice Corso:] 'f'{b}' )
             st.markdown('##### :green[Nome Corso:] 'f'{c}')
@@ -45,7 +45,8 @@ def create_tab_corsi(tab_corsi):
             st.markdown('#        ')
 
         prog_corso  = programmazione_corso(option1)
-        expander = st.expander(f'{option1}')
+        st.write("Qui sono contenute le programmazioni dei vari corsi del tipo selezionato")
+        expander = st.expander(f"{option1}")
 
         for i in range (0, len(prog_corso)):
             a = prog_corso[i].get('CodFisc')
