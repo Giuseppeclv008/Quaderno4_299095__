@@ -21,9 +21,10 @@ def create_tab_istruttori(tab_istruttori):
     st.title(f"Ecco le informazioni che cercavi sull'istruttore {cognome}")
     if info_istruttore == [] : 
         st.warning("Non è presente questo istruttore ")
+        
     else: 
         df = pd.DataFrame(info_istruttore)
-
+        
         for index, row in df.iterrows():
             CodFisc = row['CodFisc']
             Nome = row['Nome']
@@ -31,8 +32,9 @@ def create_tab_istruttori(tab_istruttori):
             DataNascita = row['DataNascita']
             Email = row['Email']
             Telefono = row['Telefono']
+          
 
-            if Telefono == "None":
+            if Telefono == None:
                 st.markdown(f"### CodFisc: {CodFisc}")
                 st.markdown(f"### Nome: {Nome} ")
                 st.write(f"### Cognome: {Cognome}")
