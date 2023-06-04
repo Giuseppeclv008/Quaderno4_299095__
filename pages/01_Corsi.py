@@ -44,7 +44,7 @@ def create_tab_corsi(tab_corsi):
             st.markdown('##### :green[Livello Corso:] 'f'{d}')
             st.markdown('#        ')
 
-        prog_corso  = programmazione_corso(option1)
+        prog_corso  = programmazione_corso(option1,option2)
         st.write("Qui sono contenute le programmazioni dei vari corsi del tipo selezionato")
         expander = st.expander(f"{option1}")
 

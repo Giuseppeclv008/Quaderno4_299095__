@@ -41,8 +41,8 @@ def info_corso_per_tipo(option1,option2):
      
     return info_per_tipo_corso_struct
 
-def programmazione_corso(option1):
-    programmazione_corso= execute_query(st.session_state["connection"], f"SELECT * FROM PROGRAMMA,CORSI WHERE PROGRAMMA.CODC = CORSI.CODC AND TIPO = '{option1}' ;")
+def programmazione_corso(option1,option2):
+    programmazione_corso= execute_query(st.session_state["connection"], f"SELECT * FROM PROGRAMMA,CORSI WHERE PROGRAMMA.CODC = CORSI.CODC AND TIPO = '{option1}' AND LIVELLO = {option2} ;")
     info_programmazione_corso= [dict(zip(programmazione_corso.keys(),result)) for result in programmazione_corso ]
     return info_programmazione_corso
 
