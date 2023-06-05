@@ -45,7 +45,7 @@ def create_tab_corsi(tab_corsi):
             st.markdown('#        ')
 
         prog_corso  = programmazione_corso(option1,option2)
-        st.write("Qui sono contenute le programmazioni dei vari corsi del tipo selezionato")
+        st.write("Qui sono contenute le programmazioni dei vari corsi del tipo selezionato per il livello scelto")
         expander = st.expander(f"{option1}")
 
         for i in range (0, len(prog_corso)):
@@ -66,7 +66,7 @@ def create_tab_corsi(tab_corsi):
             expander.write(':green[Codice Fiscale Istruttore:] 'f'{a}')
             expander.write(':green[Giorno:] 'f'{b}')
             expander.write(':green[Sala:] 'f'{d}')
-            expander.write(':green[Durata:] 'f'{c}')
+            expander.write(':green[Durata:] 'f'{c}'' minuti')
             expander.write('#        ')
       
 
